@@ -25,6 +25,8 @@
 
 Value in each grid means F1-Score(Time). Here F1-Score is tested on the test set of MS MARCO MQA, and the unit of time is seconds.
 
+The left column shows the sample number. When num_sample = n, we generate n + 1 conversations for the same context in the same way. Among them, n conversations are used for fine-tuning, and 1 is used for testing. This corresponds to a very strong SFT setting. The top row shows the number of fine-tuning epochs.
+
 SHINE achieves a score of 55.6(0.3) while requiring less time than fine-tuning a single sample for one epoch. 
 
 
