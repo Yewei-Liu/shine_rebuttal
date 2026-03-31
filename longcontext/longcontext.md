@@ -12,7 +12,7 @@ We reuse the pretrained checkpoint and continue pretrain SHINE on 8k contexts wi
 |------------------|----------|----------|-----------------|---------|--------|-------|
 | in-context       | 45.5     | 55.96    | 49.68           | 31.66   | 42.38  | 22.44 |
 | naïve            | 26.68    | 26.96    | 11.74           | 11.62   | 14.02  | 4.76  |
-| SHINE(Recurrent) | 33.07    | 32.72    | 21.98           | 14.74   | 20.06  | 19.87 |
+| SHINE(Recurrent) | 33.07    | 32.72    | 21.98           | 14.74   | 21.43  | 19.87 |
 
 We further instruction-tune SHINE-Recurrent with 16k contexts (combined with short contexts) and evaluate it on the LongBench dataset. Specifically, we test it on single-document QA, multi-document QA, and summarization tasks. As shown in the table, SHINE-Recurrent performs effectively in long-context settings. Although there is still a gap compared to in-context learning, the backbone LLM has been extensively trained on in-context tasks with thousands of times more data than ours, making these results already very strong.
 
