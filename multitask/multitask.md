@@ -11,3 +11,5 @@ We fine-tuning the hypernetwork after instructin fine-tuning mqa using these 4 d
 - samsum: summarization
 
 SHINE achieve outstanding results on dailydialog, persona-chat and samsum. The only exception is gsm8k, and we think this is because all instruction fine-tuning doesn't contain any reasoning datas and no other skills like reinforcement learning are used to enhance reasoning skills.
+
+We also extend SHINE to long context and test LongBench qmsum task, which is a summarization task. See [longcontext.md](../longcontext/longcontext.md)
