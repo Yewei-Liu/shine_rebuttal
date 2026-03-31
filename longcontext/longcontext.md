@@ -2,11 +2,11 @@
 
 ![](SHINERecurrent.png)
 
-We extend the architecture of SHINE to long context situation. The way of extending it is flexible. Naively continue pretrain and instruction fine-tune with the same architecture is one solution. Here we introduce a new architecture called SHINE Recurrent, inspiring from the design of RNN. As the picture shows, context is divided into chunks, chunks are passed through LLM to generate memory states. Now M2P Transformer not only convert memory states to lora, but also convert memory states to metalora. The metalora is concatenated back to influence all later generation of memory states.
+We extend the architecture of SHINE to long context situation. The way of extending it is flexible. Naively continual pretrain and instruction fine-tune with the same architecture is one solution. Here we introduce a new architecture called SHINE Recurrent, inspiring from the design of RNN. As the picture shows, context is divided into chunks, chunks are passed through LLM to generate memory states. Now M2P Transformer not only convert memory states to lora, but also convert memory states to metalora. The metalora is concatenated back to influence all later generation of memory states. Theoretically, it can process infinite length contexts.
 
 ![](pretrain_long.png)
 
-We reuse the pretrained checkpoint and continue pretrain SHINE on 8k contexts with chunk length 2k tokens. The figure visualize validation ppl in early stage continue pretraining. As it shows, recurrent design performance better during pretrain.
+We reuse the pretrained checkpoint and continual pretrain SHINE on 8k contexts with chunk length 2k tokens. The figure visualize validation ppl in early stage continual pretraining. As it shows, recurrent design performance better during pretrain.
 
 |                  | 2wikimqa(F1) | hotpotqa(F1) | multifieldqa_en(F1) | musique(F1) | qasper(F1) | qmsum(ROUGE) |
 |------------------|----------|----------|-----------------|---------|--------|-------|
